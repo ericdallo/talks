@@ -1,0 +1,3 @@
+[submodule "emacs-talk"]
+	path = emacs-talk
+	url = git@github.com:ericdallo/emacs-talk.git
