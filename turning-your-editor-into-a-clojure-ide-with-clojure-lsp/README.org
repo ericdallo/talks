@@ -1,0 +1,243 @@
+#+TITLE: Turning your editor into a Clojure IDE with clojure-lsp
+#+AUTHOR: @ericdallo
+
+* Turning your editor into a Clojure IDE with clojure-lsp
+
+
+
+
+
+
+
+                                     [[file:images/clojure-lsp-logo.png]]
+
+
+
+
+
+
+
+by @ericdallo
+* Who am I?
+
+  @ericdallo
+
+** Software engineer at Nubank [[file:images/nubank.png]]
+- +40 million customers
+- +1000 Software engineers
+- +600 Clojure micro services
+
+** Tech subjects
+
+- Emacs
+- Linux / NixOS
+- LSP
+
+** Open source
+
+- clojure-lsp
+- deps-bin
+- lsp-mode
+- lsp-dart
+- hover
+* What's LSP?
+
+[[file:images/lsp-language-editor.png]]
+
+* LSP (Language Server Protocol)
+
+** Client
+
+- Emacs       -   lsp-mode
+- VSCode      -   Calva
+- Vim         -   Neovim / CoC
+- SublimeText -   sublimelsp
+- IntelliJ    -   intellij-lsp
+
+** Server
+
+- Clojure      -   clojure-lsp
+- Java         -   jdtls
+- Dart/Flutter -   dart-sdk
+- Scala        -   metals
+- C++          -   clang
+- Python       -   ms-python
+
+** client <-> server communication
+
+- client/server send jsonrpc requests and wait for the response
+- client/server fire and forget jsonrpc notifications
+
+* Which features LSP can provide?
+
+- find-definition
+
+- find-references
+
+- find-implementations
+
+- diagnostics (lint)
+
+- completion
+
+- rename
+
+- format
+
+- code actions
+
+- code lenses
+
+- call hierarchy
+
+- semantic tokens
+
+- custom features for specific languages
+
+* clojure-lsp - The LSP server for Clojure
+
+** - Open source
+
+** - Implemented in Clojure
+
+** - Compiled with GraalVM
+
+** - Leverage famous Clojure community libraries
+
+  - *clj-kondo* - analysis, diagnostics
+
+  - *rewrite-clj* - refactor
+
+  - *cljfmt* - formatting
+
+* LSP + REPL works
+
+** LSP == static
+
+- Code navigation
+
+- Code refactor
+
+- Code feedback
+
+** REPL == runtime
+
+- Tests
+
+- Eval
+
+- Debug
+
+* clojure-lsp API
+
+*clojure-lsp works not just on editors*
+
+** CLI
+
+$ ~clojure-lsp clean-ns~
+
+$ ~clojure-lsp format --dry~
+
+$ ~clojure-lsp diagnostics --namespace foo.bar~
+
+** API
+
+#+BEGIN_SRC clojure
+(clojure-lsp.api/rename! {:from foo.bar/some
+                          :to foo.bar/other})
+#+END_SRC
+
+#+BEGIN_SRC clojure
+(clojure-lsp.api/diagnostics {:namespace '[foo.bar foo.baz]})
+#+END_SRC
+
+** CI
+
+Run clojure-lsp on your project after push, or lint during pull request reviews!
+
+- [[https://github.com/clojure-lsp/lein-clojure-lsp][lein-clojure-lsp]]
+
+- [[https://github.com/clojure-lsp/setup-clojure-lsp][setup-clojure-lsp]]
+
+* Setup - server
+
+** Automatic installation
+
+- lsp-mode (Emacs)
+
+- Calva (VSCode)
+
+** Manual installation
+
+- Homebrew
+
+- Download from Github releases
+
+- Repository install script
+
+- Nixpkgs
+
+- Scoop (Windows)
+
+* Setup - client
+
+** [[https://emacs-lsp.github.io/lsp-mode/page/installation/][lsp-mode]] for Emacs
+
+#+BEGIN_SRC elisp
+(use-package lsp-mode
+  :hook ((clojure-mode . lsp)
+         (clojurescript-mode . lsp)
+         (clojurec-mode . lsp))
+  :commands lsp
+  :config
+  (setq ; recommended
+        gc-cons-threshold (* 100 1024 1024)
+        read-process-output-max (* 1024 1024))
+
+  (setq ; optional
+        lsp-clojure-custom-server-command '("/path/to/your/clojure-lsp")
+
+        ; Features
+        lsp-lens-enable t
+        lsp-semantic-tokens-enable t
+
+        ;; Conflicts with other Clojure emacs packages
+        cljr-add-ns-to-blank-clj-files nil ; disable clj-refactor adding ns to blank files
+        cider-eldoc-display-for-symbol-at-point nil ; disable cider eldoc integration
+        ; lsp-eldoc-enable-hover nil ; disable lsp-mode showing eldoc during symbol at point
+        ; lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
+        ; lsp-enable-completion-at-point nil ; uncomment to use cider completion instead of lsp
+        ))
+
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode)
+;; if you are helm user
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+#+END_SRC
+
+* Demo
+
+[[https://clojure-lsp.io][clojure-lsp.io]]
+
+- Features
+
+- API
+
+* Thank you!
+
+*Any questions?*
+
+ Supported by [[https://www.clojuriststogether.org/][Clojurists Together]] 
+
+
+Webpage + Documentation - [[https://clojure-lsp.io][clojure-lsp.io]]
+
+-----
+
+ Slides - [[https://github.com/ericdallo/talks][https://github.com/ericdallo/talks]]
+ Github - [[https://github.com/ericdallo][ericdallo]]
+ Twitter - [[https://twitter.com/ericdallo][@ericdallo]]
+ website - [[https://ericdallo.dev][ericdallo.dev]]
