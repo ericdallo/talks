@@ -1,0 +1,49 @@
+* Using (Doom) Emacs at Nubank
+
+* Core concepts
+
+** Major and minor modes
+
+- lsp-mode
+- clojure-mode
+- dart-mode
+- cider-mode
+
+** Variables
+
+~(setq clojure-enable-foo true)~
+
+** elisp
+
+#+BEGIN_SRC elisp
+(defun insert-p-tag ()
+  "Insert <p></p> at cursor point."
+  (interactive)
+  (insert "<p></p>")
+  (backward-char 4))
+#+END_SRC
+
+** config-files
+
+- ~/.doom.d/init.el
+- ~/.doom.d/config.el
+- ~/.doom.d/packages.el
+- ~/.doom.d/nu.el
+
+* Why use Emacs at Nubank and what's different from other Editors?
+
+- Highly customizable, one editor for everything
+
+- REPL: Cider
+
+- LSP integration (same used on lint tasks)
+
+* Demo
+
+** Clojure
+
+*** How to use the REPL
+
+** Mobile / Flutter
+
+*** mini-meta-repo
