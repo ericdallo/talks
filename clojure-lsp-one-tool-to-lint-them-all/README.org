@@ -10,8 +10,8 @@
 
 
 
+                                                   [[file:images/profile.png]] @ericdallo
 
-                                                    #+author: @ericdallo
 
 * Hello Clojurians!
 
@@ -56,15 +56,15 @@ São Paulo, Brazil
 
 - How it's related to linting?
 
-- Setup
+- Features
 
 - Configuration across different projects and editors
 
 - How we are using at Nubank?
 
-- Custom lint
+- Custom linters
 
-- When should you use it?
+- When should you use clojure-lsp as linter?
 
 * The problem
 
@@ -78,7 +78,7 @@ São Paulo, Brazil
 - zprint
 - kibit
 
-*More linter tools == Harder to standardize*
+*More lint tools == Harder to manage/standardize*
 
 * The problem
 
@@ -255,7 +255,10 @@ Result
 #+ATTR_ORG: :width 1800
 [[file:images/custom-linter.png]]
 
-* When should you use it?
+#+ATTR_ORG: :width 1800
+[[file:images/custom-linter-2.png]]
+
+* When should you use clojure-lsp as linter?
 
 - Needs consistency across multiple projects including custom linters
 
