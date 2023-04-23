@@ -1,0 +1,279 @@
+
+              #+title: clojure-lsp: One Tool To Lint Them All
+
+
+
+
+                          [[file:images/clojure-lsp-logo.png]]
+
+
+
+
+
+
+                                                    #+author: @ericdallo
+
+* Hello Clojurians!
+
+** Software engineer at Nubank [[file:images/nubank.png]]
+
+** Tech subjects
+- Emacs
+- Linux / NixOS
+- Dev Tooling
+
+** Open Source projects
+- clojure-lsp
+- deps-bin
+- clj-easy
+- lsp-mode
+- lsp-dart
+- jet.el
+- hover.el
+
+* About Nubank
+
+[[file:images/nubank-building.png]]
+
+São Paulo, Brazil
+
+* About Nubank
+
+[[file:images/nubank-front.png]]
+
+- +80 million customers
+
+- +1800 Software engineers
+
+- +1300 Clojure micro services
+
+
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+- How it's related to linting?
+
+- Setup
+
+- Configuration across different projects and editors
+
+- How we are using at Nubank?
+
+- Custom lint
+
+- When should you use it?
+
+* The problem
+
+** No lint tool standard
+
+- clj-kondo
+- eastwood
+- bikeshed
+- nsorg
+- cljfmt
+- zprint
+- kibit
+
+*More linter tools == Harder to standardize*
+
+* The problem
+
+** No config standard
+
+- Remove new lines?
+
+- Vertical alignment?
+
+- Warn about deprecated or just info about it?
+
+- Outdated linter versions in some projects
+
+* The problem
+
+** No standard between different editors
+
+- How avoid local configs in each dev machines?
+
+- How handle different editors? Emacs, VScode, vim, Intellij
+
+* What is clojure-lsp?
+
+Language Server Protocol
+
+[[file:images/lsp-language-editor.png]]
+
+* How it's related to linting?
+
+clojure-lsp already:
+
+- Know your project classpath, source-paths and analysis
+
+- Use ~clj-kondo~ for _diagnostics_
+
+- Use ~cljfmt~ for _formatting_
+
+- Has the logic to _clean-ns_ based on analysis
+
+
+*Why not provide all of that via API / CLI?*
+
+* Main features
+
+- ~diagnostics~
+
+  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
+
+- ~clean-ns~
+
+  Fix or report unused/unsorted requires, imports, alias and refers.
+
+- ~format~
+
+  Fix or report files not formatted with cljfmt.
+
+- ~dump~
+  Bring all analysis of your project, useful for specific analysis of codebases.
+
+* How to use?
+
+- API (JVM)
+
+- CLI
+
+- CI
+
+- lein-clojure-lsp
+
+- Babashka pod
+
+* Exportable configurations
+
+** clj-kondo
+
+- Searches the classpath for
+  ~clj-kondo.exports/<your-org>/<your-libname>/~ dir with configs and copy to ~.clj-kondo/~
+
+** clojure-lsp
+
+- Searches the classpath for
+  ~clojure-lsp.exports/<your-org>/<your-libname>/~ dir with configs and consider it during usage.
+
+* How we are using at Nubank?
+
+** nubank/some-common-lib
+
+~src/some_common_lib/core.clj~
+
+#+BEGIN_SRC clojure
+(defmacro my-custom-macro [& args]
+  ,,,)
+#+END_SRC
+
+* How we are using at Nubank?
+
+** nubank/some-common-lib
+
+~resources/clj-kondo.exports/nubank/some-common-lib/config.edn~
+
+#+BEGIN_SRC clojure
+{:lint-as
+ {some-common-lib.core/my-custom-macro clojure.core/defn}}
+#+END_SRC
+
+~resources/clojure-lsp.exports/nubank/some-common-lib/config.edn~
+
+#+BEGIN_SRC clojure
+{:cljfmt
+ {:indents
+  {some-common-lib.core/my-custom-macro [[:inner 0]]}}}
+#+END_SRC
+
+* How we are using at Nubank?
+
+** nubank/codestyle
+
+~resources/clj-kondo.exports/nubank/codestyle/config.edn~
+
+#+BEGIN_SRC clojure
+{:config-paths ["nubank/some-common-lib"
+                "nubank/other-common-lib"]}
+#+END_SRC
+
+~resources/clojure-lsp.exports/nubank/codestyle/config.edn~
+
+#+BEGIN_SRC clojure
+{:classpath-config-paths ["nubank/some-common-lib"
+                          "nubank/other-common-lib"]}
+#+END_SRC
+
+* How we are using at Nubank?
+
+** nubank/some-service
+
+~.clj-kondo/config.edn~
+
+#+BEGIN_SRC clojure
+{:config-paths ["nubank/codestyle"]}
+#+END_SRC
+
+~.lsp/config.edn~
+
+#+BEGIN_SRC clojure
+{:classpath-config-paths ["nubank/codestyle"]}
+#+END_SRC
+
+* How we are using at Nubank?
+
+[[file:images/codestyle-summary.png]]
+
+* Custom linters
+
+~resources/clj-kondo.exports/nubank/date-lib/config.edn~
+
+#+BEGIN_SRC clojure
+{:hooks {:analyze-call
+         {date-lib/parse-my-date date-lib/parse-my-date}}
+ :linters {:avoid-upper-case-year-notation {:level :warning}}}
+#+END_SRC
+
+~resources/clj-kondo.exports/nubank/date-lib/nubank/some_common_date.clj~
+
+#+BEGIN_SRC clojure
+(clj-kondo.hooks/reg-finding!
+  {:message "Avoid 'Y' date notation, use 'y' instead"
+   :type :avoid-upper-case-year-notation})
+#+END_SRC
+
+* Custom linters
+
+Result
+
+#+ATTR_ORG: :width 1800
+[[file:images/custom-linter.png]]
+
+* When should you use it?
+
+- Needs consistency across multiple projects including custom linters
+
+- Needs consistency between +all+ most editors
+
+- Deep analysis of projects (dump feature)
+
+* Thank you!
+
+*Happy lint!*
+
+Documentation - [[https://clojure-lsp.io][clojure-lsp.io]]
+
+Any questions?
+
+-----
+
+ Slides - [[https://github.com/ericdallo/talks][https://github.com/ericdallo/talks]]
+ Github - [[https://github.com/ericdallo][ericdallo]]
+ Twitter - [[https://twitter.com/ericdallo][@ericdallo]]
+ website - [[https://ericdallo.dev][ericdallo.dev]]
