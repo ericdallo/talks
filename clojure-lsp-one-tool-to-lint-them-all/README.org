@@ -230,6 +230,20 @@ clojure-lsp already:
 
 [[file:images/codestyle-summary.png]]
 
+* How we are using at Nubank?
+
+** Consistent library updates
+
+[[file:images/bumpito.png]]
+
+[[file:images/bumpito-lint-fix.png]]
+
+* Custom linters
+
+- Warn about specific code that we had issues in the past
+
+- clj-kondo hooks / reg-finding!
+
 * Custom linters
 
 ~resources/clj-kondo.exports/nubank/date-lib/config.edn~
@@ -250,8 +264,6 @@ clojure-lsp already:
 
 * Custom linters
 
-Result
-
 #+ATTR_ORG: :width 1800
 [[file:images/custom-linter.png]]
 
@@ -260,9 +272,13 @@ Result
 
 * When should you use clojure-lsp as linter?
 
-- Needs consistency across multiple projects including custom linters
+- Don't need to handle multiple linters
 
-- Needs consistency between +all+ most editors
+- Need consistency across multiple projects
+
+- Need consistency across custom linters
+
+- Need consistency between +all+ most editors
 
 - Deep analysis of projects (dump feature)
 
