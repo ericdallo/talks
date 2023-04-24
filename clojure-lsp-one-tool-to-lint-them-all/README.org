@@ -17,6 +17,19 @@
 
 ** Software engineer at Nubank [[file:images/nubank.png]]
 
+* Hello Clojurians!
+
+** Software engineer at Nubank [[file:images/nubank.png]]
+
+** Tech subjects
+- Emacs
+- Linux / NixOS
+- Dev Tooling
+
+* Hello Clojurians!
+
+** Software engineer at Nubank [[file:images/nubank.png]]
+
 ** Tech subjects
 - Emacs
 - Linux / NixOS
@@ -52,6 +65,76 @@ São Paulo, Brazil
 
 - The problem
 
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+- How it's related to linting?
+
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+- How it's related to linting?
+
+- Features
+
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+- How it's related to linting?
+
+- Features
+
+- Configuration across different projects and editors
+
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+- How it's related to linting?
+
+- Features
+
+- Configuration across different projects and editors
+
+- How we are using at Nubank?
+
+* What will we cover?
+
+- The problem
+
+- What is clojure-lsp
+
+- How it's related to linting?
+
+- Features
+
+- Configuration across different projects and editors
+
+- How we are using at Nubank?
+
+- Custom linters
+
+* What will we cover?
+
+- The problem
+
 - What is clojure-lsp
 
 - How it's related to linting?
@@ -78,7 +161,23 @@ São Paulo, Brazil
 - zprint
 - kibit
 
+* The problem
+
+** No lint tool standard
+
+- clj-kondo
+- eastwood
+- bikeshed
+- nsorg
+- cljfmt
+- zprint
+- kibit
+
 *More lint tools == Harder to manage/standardize*
+
+* The problem
+
+** No config standard
 
 * The problem
 
@@ -96,9 +195,9 @@ São Paulo, Brazil
 
 ** No standard between different editors
 
-- How avoid local configs in each dev machines?
-
 - How handle different editors? Emacs, VScode, Vim, Intellij
+
+- How avoid local configs in each dev machines?
 
 * What is clojure-lsp?
 
@@ -119,6 +218,42 @@ clojure-lsp already:
 
 - Knows your project classpath, source-paths and analysis
 
+* How it's related to linting?
+
+clojure-lsp already:
+
+- Knows your project classpath, source-paths and analysis
+
+- Uses ~clj-kondo~ for _diagnostics_
+
+* How it's related to linting?
+
+clojure-lsp already:
+
+- Knows your project classpath, source-paths and analysis
+
+- Uses ~clj-kondo~ for _diagnostics_
+
+- Uses ~cljfmt~ for _formatting_
+
+* How it's related to linting?
+
+clojure-lsp already:
+
+- Knows your project classpath, source-paths and analysis
+
+- Uses ~clj-kondo~ for _diagnostics_
+
+- Uses ~cljfmt~ for _formatting_
+
+- Has the logic to _clean-ns_ and _refactorings_ based on analysis
+
+* How it's related to linting?
+
+clojure-lsp already:
+
+- Knows your project classpath, source-paths and analysis
+
 - Uses ~clj-kondo~ for _diagnostics_
 
 - Uses ~cljfmt~ for _formatting_
@@ -127,6 +262,38 @@ clojure-lsp already:
 
 
 *Why not provide those features via API / CLI?*
+
+* Main features
+
+* Main features
+
+- ~diagnostics~
+
+  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
+
+* Main features
+
+- ~diagnostics~
+
+  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
+
+- ~clean-ns~
+
+  Fix or report unused/unsorted requires, imports, alias and refers.
+
+* Main features
+
+- ~diagnostics~
+
+  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
+
+- ~clean-ns~
+
+  Fix or report unused/unsorted requires, imports, alias and refers.
+
+- ~format~
+
+  Fix or report files not formatted with cljfmt.
 
 * Main features
 
@@ -147,6 +314,36 @@ clojure-lsp already:
 
 * How to use?
 
+* How to use?
+
+- API: ~clojure-lsp.api~
+
+* How to use?
+
+- API: ~clojure-lsp.api~
+
+- CLI: ~clojure-lsp --help~
+
+* How to use?
+
+- API: ~clojure-lsp.api~
+
+- CLI: ~clojure-lsp --help~
+
+- CI: setup-clojure-lsp Github Action
+
+* How to use?
+
+- API: ~clojure-lsp.api~
+
+- CLI: ~clojure-lsp --help~
+
+- CI: setup-clojure-lsp Github Action
+
+- Leiningen: ~lein-clojure-lsp~ plugin
+
+* How to use?
+
 - API: ~clojure-lsp.api~
 
 - CLI: ~clojure-lsp --help~
@@ -156,6 +353,15 @@ clojure-lsp already:
 - Leiningen: ~lein-clojure-lsp~ plugin
 
 - Babashka pod
+
+* Exportable configurations
+
+* Exportable configurations
+
+** clj-kondo
+
+- Searches the classpath for
+  ~clj-kondo.exports/<your-org>/<your-libname>/~ dir with configs and copy to ~.clj-kondo/~
 
 * Exportable configurations
 
@@ -169,6 +375,7 @@ clojure-lsp already:
 - Searches the classpath for
   ~clojure-lsp.exports/<your-org>/<your-libname>/~ dir with configs and consider it during usage.
 
+
 * How we are using at Nubank?
 
 ** nubank/some-common-lib
@@ -179,6 +386,21 @@ clojure-lsp already:
 (defmacro my-custom-macro [& args]
   ,,,)
 #+END_SRC
+
+* How we are using at Nubank?
+
+** nubank/some-common-lib
+
+~src/some_common_lib/core.clj~
+
+#+BEGIN_SRC clojure
+(defmacro my-custom-macro [& args]
+  ,,,)
+#+END_SRC
+
+Usage:
+
+[[file:images/macro-lint.png]]
 
 * How we are using at Nubank?
 
@@ -235,6 +457,12 @@ clojure-lsp already:
 
 * How we are using at Nubank?
 
+Properly linted
+
+[[file:images/macro-lint-fixed.png]]
+
+* How we are using at Nubank?
+
 [[file:images/codestyle-summary.png]]
 
 * How we are using at Nubank?
@@ -246,6 +474,24 @@ clojure-lsp already:
 [[file:images/bumpito-lint-fix.png]]
 
 * Custom linters
+
+* Custom linters
+
+[[file:images/wrong-dates.png]]
+
+* Custom linters
+
+[[file:images/wrong-dates.png]]      [[file:images/wrong-dates-explanation.png]]
+
+* Custom linters
+
+[[file:images/wrong-dates.png]]      [[file:images/wrong-dates-explanation.png]]
+
+- Warn about specific code that we had issues in the past
+
+* Custom linters
+
+[[file:images/wrong-dates.png]]      [[file:images/wrong-dates-explanation.png]]
 
 - Warn about specific code that we had issues in the past
 
@@ -274,8 +520,44 @@ clojure-lsp already:
 #+ATTR_ORG: :width 1800
 [[file:images/custom-linter.png]]
 
+* Custom linters
+
+#+ATTR_ORG: :width 1800
+[[file:images/custom-linter.png]]
+
 #+ATTR_ORG: :width 1800
 [[file:images/custom-linter-2.png]]
+
+* When should you use clojure-lsp as linter?
+
+
+* When should you use clojure-lsp as linter?
+
+- Don't need to handle multiple linters
+
+* When should you use clojure-lsp as linter?
+
+- Don't need to handle multiple linters
+
+- Need consistency across multiple projects
+
+* When should you use clojure-lsp as linter?
+
+- Don't need to handle multiple linters
+
+- Need consistency across multiple projects
+
+- Need consistency across custom linters
+
+* When should you use clojure-lsp as linter?
+
+- Don't need to handle multiple linters
+
+- Need consistency across multiple projects
+
+- Need consistency across custom linters
+
+- Need consistency between +all+ most editors
 
 * When should you use clojure-lsp as linter?
 
