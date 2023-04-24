@@ -98,28 +98,35 @@ São Paulo, Brazil
 
 - How avoid local configs in each dev machines?
 
-- How handle different editors? Emacs, VScode, vim, Intellij
+- How handle different editors? Emacs, VScode, Vim, Intellij
 
 * What is clojure-lsp?
 
-Language Server Protocol
+                    Language Server Protocol
+#+ATTR_ORG: :width 1400
+     [[file:images/lsp-language-editor.png]]
 
-[[file:images/lsp-language-editor.png]]
+* How it's related to linting?
+
+** The idea
+
+[[file:images/clojure-lsp-api-issue.png]]
+
 
 * How it's related to linting?
 
 clojure-lsp already:
 
-- Know your project classpath, source-paths and analysis
+- Knows your project classpath, source-paths and analysis
 
-- Use ~clj-kondo~ for _diagnostics_
+- Uses ~clj-kondo~ for _diagnostics_
 
-- Use ~cljfmt~ for _formatting_
+- Uses ~cljfmt~ for _formatting_
 
-- Has the logic to _clean-ns_ based on analysis
+- Has the logic to _clean-ns_ and _refactorings_ based on analysis
 
 
-*Why not provide all of that via API / CLI?*
+*Why not provide those features via API / CLI?*
 
 * Main features
 
@@ -136,17 +143,17 @@ clojure-lsp already:
   Fix or report files not formatted with cljfmt.
 
 - ~dump~
-  Bring all analysis of your project, useful for specific analysis of codebases.
+  Return all analysis of your project, useful for specific analysis of codebases.
 
 * How to use?
 
-- API (JVM)
+- API: ~clojure-lsp.api~
 
-- CLI
+- CLI: ~clojure-lsp --help~
 
-- CI
+- CI: setup-clojure-lsp Github Action
 
-- lein-clojure-lsp
+- Leiningen: ~lein-clojure-lsp~ plugin
 
 - Babashka pod
 
