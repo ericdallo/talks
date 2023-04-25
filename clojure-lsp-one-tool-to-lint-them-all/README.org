@@ -149,9 +149,9 @@ São Paulo, Brazil
 
 - When should you use clojure-lsp as linter?
 
-* The problem
+* The problem we had
 
-** No lint tool standard
+** No lint tool standard in projects
 
 - clj-kondo
 - eastwood
@@ -161,9 +161,9 @@ São Paulo, Brazil
 - zprint
 - kibit
 
-* The problem
+* The problem we had
 
-** No lint tool standard
+** No lint tool standard in projects
 
 - clj-kondo
 - eastwood
@@ -175,11 +175,11 @@ São Paulo, Brazil
 
 *More lint tools == Harder to manage/standardize*
 
-* The problem
+* The problem we had
 
 ** No config standard
 
-* The problem
+* The problem we had
 
 ** No config standard
 
@@ -191,7 +191,7 @@ São Paulo, Brazil
 
 - Outdated linter versions in some projects
 
-* The problem
+* The problem we had
 
 ** No standard between different editors
 
@@ -204,6 +204,24 @@ São Paulo, Brazil
                     Language Server Protocol
 #+ATTR_ORG: :width 1400
      [[file:images/lsp-language-editor.png]]
+
+* What is clojure-lsp?
+
+- Open Source [[https://github.com/clojure-lsp/clojure-lsp][github.com/clojure-lsp]]
+
+* What is clojure-lsp?
+
+- Open Source [[https://github.com/clojure-lsp/clojure-lsp][github.com/clojure-lsp]]
+
+- Made in Clojure
+
+* What is clojure-lsp?
+
+- Open Source [[https://github.com/clojure-lsp/clojure-lsp][github.com/clojure-lsp]]
+
+- Made in Clojure
+
+- Good oportunity to join the Clojure community
 
 * How it's related to linting?
 
@@ -269,49 +287,97 @@ clojure-lsp already:
 
 - ~diagnostics~
 
-  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
+  Return project findings like unused public vars, redundant code and more.
+  Source: clj-kondo, clj-depend and built-in
 
 * Main features
 
 - ~diagnostics~
 
-  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
-
-- ~clean-ns~
-
-  Fix or report unused/unsorted requires, imports, alias and refers.
+  Return project findings like unused public vars, redundant code and more.
+  Source: clj-kondo, clj-depend and built-in
+#+ATTR_ORG: :width 800
+[[file:images/diagnostics.png]]
 
 * Main features
 
 - ~diagnostics~
 
-  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
+  Return project findings like unused public vars, redundant code and more.
+  Source: clj-kondo, clj-depend and built-in
+#+ATTR_ORG: :width 800
+[[file:images/diagnostics.png]]
+#+ATTR_ORG: :width 1200
+[[file:images/diagnostics-cli.png]]
+
+* Main features
 
 - ~clean-ns~
 
   Fix or report unused/unsorted requires, imports, alias and refers.
+  Source: built-in
+
+* Main features
+
+- ~clean-ns~
+
+  Fix or report unused/unsorted requires, imports, alias and refers.
+  Source: built-in
+
+
+     Before                                After
+[[file:images/clean-ns.png]]            [[file:images/clean-ns-fix.png]]
+
+* Main features
+
+- ~clean-ns~
+
+  Fix or report unused/unsorted requires, imports, alias and refers.
+  Source: built-in
+
+
+   [[file:images/clean-ns-cli.png]]
+
+* Main features
+
+- ~format~
+
+  Fix or report files not formatted with cljfmt.
+  Source: cljfmt
+
+* Main features
+
+- ~format~
+
+  Fix or report files not formatted with cljfmt.
+  Source: cljfmt
+
+     Before                         After
+  [[file:images/format.png]]                    [[file:images/format-fix.png]]
+
+* Main features
 
 - ~format~
 
   Fix or report files not formatted with cljfmt.
 
+
+    [[file:images/format-cli.png]]
+
+
 * Main features
-
-- ~diagnostics~
-
-  Return project findings like unused public vars, redundant code and more mostly from clj-kondo.
-
-- ~clean-ns~
-
-  Fix or report unused/unsorted requires, imports, alias and refers.
-
-- ~format~
-
-  Fix or report files not formatted with cljfmt.
 
 - ~dump~
   Return all analysis of your project, useful for specific analysis of codebases.
 
+* Main features
+
+- ~dump~
+  Return all analysis of your project, useful for specific analysis of codebases.
+
+
+    [[file:images/dump-cli.png]]
+
 * How to use?
 
 * How to use?
@@ -352,7 +418,7 @@ clojure-lsp already:
 
 - Leiningen: ~lein-clojure-lsp~ plugin
 
-- Babashka pod
+- Babashka pod: use ~clojure-lsp.api~ from Babashka code.
 
 * Exportable configurations
 
@@ -533,17 +599,17 @@ Properly linted
 
 * When should you use clojure-lsp as linter?
 
-- Don't need to handle multiple linters
+- Don't want to handle multiple linters
 
 * When should you use clojure-lsp as linter?
 
-- Don't need to handle multiple linters
+- Don't want to handle multiple linters
 
 - Need consistency across multiple projects
 
 * When should you use clojure-lsp as linter?
 
-- Don't need to handle multiple linters
+- Don't want to handle multiple linters
 
 - Need consistency across multiple projects
 
@@ -551,7 +617,7 @@ Properly linted
 
 * When should you use clojure-lsp as linter?
 
-- Don't need to handle multiple linters
+- Don't want to handle multiple linters
 
 - Need consistency across multiple projects
 
@@ -561,7 +627,7 @@ Properly linted
 
 * When should you use clojure-lsp as linter?
 
-- Don't need to handle multiple linters
+- Don't want to handle multiple linters
 
 - Need consistency across multiple projects
 
