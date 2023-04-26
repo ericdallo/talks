@@ -52,7 +52,7 @@ São Paulo, Brazil
 
 * About Nubank
 
-[[file:images/nubank-front.png]]
+[[file:images/nubank-front.png]]         [[file:images/nubank-qrcode.png]]
 
 - +80 million customers
 
