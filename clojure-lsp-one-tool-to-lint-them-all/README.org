@@ -326,6 +326,7 @@ clojure-lsp already:
 
 
      Before                                After
+#+ATTR_ORG: :width 750
 [[file:images/clean-ns.png]]            [[file:images/clean-ns-fix.png]]
 
 * Main features
@@ -334,8 +335,7 @@ clojure-lsp already:
 
   Fix or report unused/unsorted requires, imports, alias and refers.
   Source: built-in
-
-
+   #+ATTR_ORG: :width 800
    [[file:images/clean-ns-cli.png]]
 
 * Main features
@@ -352,7 +352,8 @@ clojure-lsp already:
   Fix or report files not formatted with cljfmt.
   Source: cljfmt
 
-     Before                         After
+     Before                                    After
+  #+ATTR_ORG: :width 500
   [[file:images/format.png]]                    [[file:images/format-fix.png]]
 
 * Main features
@@ -360,8 +361,7 @@ clojure-lsp already:
 - ~format~
 
   Fix or report files not formatted with cljfmt.
-
-
+   #+ATTR_ORG: :width 700
     [[file:images/format-cli.png]]
 
 
@@ -375,7 +375,7 @@ clojure-lsp already:
 - ~dump~
   Return all analysis of your project, useful for specific analysis of codebases.
 
-
+   #+ATTR_ORG: :width 1300
     [[file:images/dump-cli.png]]
 
 * How to use?
@@ -465,7 +465,7 @@ clojure-lsp already:
 #+END_SRC
 
 Usage:
-
+#+ATTR_ORG: :width 1400
 [[file:images/macro-lint.png]]
 
 * How we are using at Nubank?
@@ -523,12 +523,15 @@ Usage:
 
 * How we are using at Nubank?
 
-Properly linted
+Properly linted:
 
+#+ATTR_ORG: :width 1200
 [[file:images/macro-lint-fixed.png]]
 
 * How we are using at Nubank?
 
+- ~codestyle~ goes into dev profile only
+#+ATTR_ORG: :width 1700
 [[file:images/codestyle-summary.png]]
 
 * How we are using at Nubank?
@@ -605,11 +608,21 @@ Properly linted
 
 - Don't want to handle multiple linters
 
+- Lint the project, not specific folders
+
+* When should you use clojure-lsp as linter?
+
+- Don't want to handle multiple linters
+
+- Lint the project, not specific folders
+
 - Need consistency across multiple projects
 
 * When should you use clojure-lsp as linter?
 
 - Don't want to handle multiple linters
+
+- Lint the project, not specific folders
 
 - Need consistency across multiple projects
 
@@ -618,6 +631,8 @@ Properly linted
 * When should you use clojure-lsp as linter?
 
 - Don't want to handle multiple linters
+
+- Lint the project, not specific folders
 
 - Need consistency across multiple projects
 
@@ -628,6 +643,8 @@ Properly linted
 * When should you use clojure-lsp as linter?
 
 - Don't want to handle multiple linters
+
+- Lint the project, not specific folders
 
 - Need consistency across multiple projects
 
