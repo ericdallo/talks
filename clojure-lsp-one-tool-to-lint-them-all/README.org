@@ -223,17 +223,9 @@ São Paulo, Brazil
 
 - Good oportunity to join the Clojure community
 
-* What is clojure-lsp?
-
-- Open Source [[https://github.com/clojure-lsp/clojure-lsp][github.com/clojure-lsp]]
-
-- Made in Clojure
-
-- Good oportunity to join the Clojure community
+* How it's related to linting?
 
 - Understands your project source-paths, classpath and analysis
-
-* How it's related to linting?
 
 ** The idea
 
