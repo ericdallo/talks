@@ -552,20 +552,24 @@ Properly linted:
 
 * Custom linters
 
+#+ATTR_ORG: :width 700
 [[file:images/wrong-dates.png]]
 
 * Custom linters
 
+#+ATTR_ORG: :width 700
 [[file:images/wrong-dates.png]]      [[file:images/wrong-dates-explanation.png]]
 
 * Custom linters
 
+#+ATTR_ORG: :width 700
 [[file:images/wrong-dates.png]]      [[file:images/wrong-dates-explanation.png]]
 
 - Warn about specific code that we had issues in the past
 
 * Custom linters
 
+#+ATTR_ORG: :width 700
 [[file:images/wrong-dates.png]]      [[file:images/wrong-dates-explanation.png]]
 
 - Warn about specific code that we had issues in the past
