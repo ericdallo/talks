@@ -223,6 +223,16 @@ São Paulo, Brazil
 
 - Good oportunity to join the Clojure community
 
+* What is clojure-lsp?
+
+- Open Source [[https://github.com/clojure-lsp/clojure-lsp][github.com/clojure-lsp]]
+
+- Made in Clojure
+
+- Good oportunity to join the Clojure community
+
+- Understands your project source-paths, classpath and analysis
+
 * How it's related to linting?
 
 ** The idea
@@ -242,7 +252,7 @@ clojure-lsp already:
 
 - Knows your project classpath, source-paths and analysis
 
-- Uses ~clj-kondo~ for _diagnostics_
+- Uses ~clj-kondo~ for _diagnostics_ and analysis
 
 * How it's related to linting?
 
@@ -250,7 +260,7 @@ clojure-lsp already:
 
 - Knows your project classpath, source-paths and analysis
 
-- Uses ~clj-kondo~ for _diagnostics_
+- Uses ~clj-kondo~ for _diagnostics_ and analysis
 
 - Uses ~cljfmt~ for _formatting_
 
@@ -260,7 +270,7 @@ clojure-lsp already:
 
 - Knows your project classpath, source-paths and analysis
 
-- Uses ~clj-kondo~ for _diagnostics_
+- Uses ~clj-kondo~ for _diagnostics_ and analysis
 
 - Uses ~cljfmt~ for _formatting_
 
@@ -272,7 +282,7 @@ clojure-lsp already:
 
 - Knows your project classpath, source-paths and analysis
 
-- Uses ~clj-kondo~ for _diagnostics_
+- Uses ~clj-kondo~ for _diagnostics_ and analysis
 
 - Uses ~cljfmt~ for _formatting_
 
@@ -533,6 +543,10 @@ Properly linted:
 - ~codestyle~ goes into dev profile only
 #+ATTR_ORG: :width 1700
 [[file:images/codestyle-summary.png]]
+
+* How we are using at Nubank?
+
+** Consistent library updates
 
 * How we are using at Nubank?
 
