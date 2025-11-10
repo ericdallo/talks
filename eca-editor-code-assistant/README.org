@@ -5,7 +5,7 @@
                       [[file:images/logo.png]]
 
 
-                                        [[file:images/profile.jpeg]] @ericdallo
+                                        [[file:images/profile.png]] @ericdallo
 
 * Hello Clojurians!
 
@@ -68,7 +68,7 @@
  [[file:images/funny-ai.png]]
 
 * Why ECA?
-- *Protocol*: Editors <-> LLMs     [[file:images/rationale.jpg]]
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
 - *Multi-model*: with Local LLMs support
@@ -142,16 +142,31 @@
 * Hidden gems
 
 #+ATTR_ORG: :width 1000
-         [[file:images/my-precious.jpeg]]
+         [[file:images/my-precious.png]]
 
 * Hidden gems - Hooks
-
 #+ATTR_ORG: :width 700
 [[file:images/hooks-1.png]] [[file:images/hooks-2.png]]
+- Notifications
+  
+- Tool call block or arguments change
+  
+- Context injection
+
 
 * Hidden gems - Custom behaviors
 
+
+              [[file:images/custom-behaviors-1.png]]
+
+              
+              [[file:images/custom-behaviors-2.png]]
+
+
 * Hidden gems - Custom tools
+#+ATTR_ORG: :width 700
+[[file:images/custom-tools-1.png]]   [[file:images/custom-tools-2.png]]
+
 
 * Demo?
 
