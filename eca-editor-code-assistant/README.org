@@ -1,0 +1,174 @@
+        #+title: ECA: AI pair programming in your editor
+
+
+
+                      [[file:images/logo.png]]
+
+
+                                        [[file:images/profile.jpeg]] @ericdallo
+
+* Hello Clojurians!
+
+* Hello Clojurians!
+
+** Software engineer at Nubank
+
+* Hello Clojurians!
+
+** Software engineer at Nubank
+
+** Tech subjects
+- Emacs
+- Linux / NixOS
+- Dev Tooling
+
+* Hello Clojurians!
+
+** Software engineer at Nubank
+
+** Tech subjects
+- Emacs
+- Linux / NixOS
+- Dev Tooling
+
+** Open Source projects
+- eca                        - clj-easy
+- clojure-lsp                - lsp-mode
+- clojure-lsp-intellij       - lsp-dart
+- metrepl                    - jet.el
+- deps-bin
+
+* What will we cover?
+
+- Why AI for development?        - Main Features
+                                   - MCP
+- Why ECA? / Rationale             - Chat
+                                   - Rewrite
+- The protocol                     - Completion
+                                   - Login
+- The LLM loop                     - Contexts
+                                   - Behaviors
+- Metrics                          - Tools
+                                   - Commands
+- Demo                             - Hooks
+                                   
+
+* Why AI for development?
+
+- LLMs are just text generators basead on weight
+
+- LLM is a developer tool, not a problem solver
+
+- You (should) still need to think
+
+- Works great for pair programming
+
+- It's like a developer, it can be awesome but can mess things up too.
+
+ [[file:images/funny-ai.png]]
+
+* Why ECA?
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.jpg]]
+- *UX*: LLMs get better, UX not really
+
+- *Multi-model*: with Local LLMs support
+
+- *Fast:* Written in Clojure and compiled with GraalVM
+
+- *Free:* Opensource
+
+- *Transparent:* Prompt, contexts, _metrics_
+
+* Main Features
+
+* Main Features - Chat
+
+#+ATTR_ORG: :width 900
+             [[file:images/chat-0.png]]
+
+
+* Main Features - Chat
+
+#+ATTR_ORG: :width 1200
+       [[file:images/chat-1.png]]
+
+* Main Features - Chat
+#+ATTR_ORG: :width 650
+             [[file:images/chat-2.png]]
+                     
+* Main Features - Rewrite
+
+
+
+[[file:images/rewrite-1.png]]   -->   [[file:images/rewrite-2.png]]
+
+
+* Main Features - Completion
+
+#+ATTR_ORG: :width 1200
+      [[file:images/completion.png]]
+
+* Metrics
+
+- Improve AI quality output
+
+  - Improve tokens cost
+    
+  - Measure failed tools
+
+- Opentelemetry
+
+#+ATTR_ORG: :width 1500
+[[file:images/metrics-config.png]]
+
+* Metrics
+
+
+          [[file:images/metrics.png]]
+
+* The Protocol
+
+* The Protocol
+
+#+ATTR_ORG: :width 700
+[[file:images/protocol-points.png]] [[file:images/protocol-1.png]]
+
+* The LLM Loop
+              [[file:images/llm-loop-1.png]]
+
+* The LLM Loop
+              [[file:images/llm-loop-2.png]]
+
+* Hidden gems
+
+#+ATTR_ORG: :width 1000
+         [[file:images/my-precious.jpeg]]
+
+* Hidden gems - Hooks
+
+#+ATTR_ORG: :width 700
+[[file:images/hooks-1.png]] [[file:images/hooks-2.png]]
+
+* Hidden gems - Custom behaviors
+
+* Hidden gems - Custom tools
+
+* Demo?
+
+* Thank you!
+
+Special thanks to [[https://www.clojuriststogether.org/][Clojurists Together]] for the sponsor!
+
+*Happy AI pair programming!*
+
+Any questions?
+
+
+
+-----
+
+Documentation - [[https://eca.dev][eca.dev]]
+ Slides - [[https://github.com/ericdallo/talks][github.com/ericdallo/talks]]
+ Github - [[https://github.com/ericdallo][ericdallo]]
+ website - [[https://ericdallo.dev][ericdallo.dev]]
+
