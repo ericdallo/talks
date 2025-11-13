@@ -7,13 +7,11 @@
 
                                         [[file:images/profile.png]] @ericdallo
 
-* Hello Clojurians!
-
-* Hello Clojurians!
+* About me
 
 ** Software engineer at Nubank
 
-* Hello Clojurians!
+* About me
 
 ** Software engineer at Nubank
 
@@ -22,7 +20,7 @@
 - Linux / NixOS
 - Dev Tooling
 
-* Hello Clojurians!
+* About me
 
 ** Software engineer at Nubank
 
@@ -40,22 +38,55 @@
 
 * What will we cover?
 
-- Why AI for development?        - Main Features
-                                   - MCP
-- Why ECA? / Rationale             - Chat
-                                   - Rewrite
-- The protocol                     - Completion
-                                   - Login
-- The LLM loop                     - Contexts
-                                   - Behaviors
-- Metrics                          - Tools
-                                   - Commands
-- Demo                             - Hooks
-                                   
+- Why AI for development?
+  
+- Why ECA? / Rationale
+
+- Main features
+
+- Metrics
+
+- The protocol
+   
+- The protocol
+  
+- The LLM loop
+
+- Hidden gems
 
 * Why AI for development?
 
-- LLMs are just text generators basead on weight
+* Why AI for development?
+
+- "LLMs are text generators basead on weight"
+
+* Why AI for development?
+
+- "LLMs are text generators basead on weight"
+
+- LLM is a developer tool, not a problem solver
+
+* Why AI for development?
+
+- "LLMs are text generators basead on weight"
+
+- LLM is a developer tool, not a problem solver
+
+- You (should) still need to think
+
+* Why AI for development?
+
+- "LLMs are text generators basead on weight"
+
+- LLM is a developer tool, not a problem solver
+
+- You (should) still need to think
+
+- Works great for pair programming
+
+* Why AI for development?
+
+- "LLMs are text generators basead on weight"
 
 - LLM is a developer tool, not a problem solver
 
@@ -65,19 +96,57 @@
 
 - It's like a developer, it can be awesome but can mess things up too.
 
- [[file:images/funny-ai.png]]
+  [[file:images/funny-ai.png]]     [[file:images/ai-thumbs-up.png]]
+
+* Why ECA?
+
+* Why ECA?
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
+
+* Why ECA?
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
+- *UX*: LLMs get better, UX not really
 
 * Why ECA?
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
 - *Multi-model*: with Local LLMs support
+  (company friendly)
+
+* Why ECA?
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
+- *UX*: LLMs get better, UX not really
+
+- *Multi-model*: with Local LLMs support
+  (company friendly)
+
+- *Fast:* Written in Clojure and compiled with GraalVM
+
+* Why ECA?
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
+- *UX*: LLMs get better, UX not really
+
+- *Multi-model*: with Local LLMs support
+  (company friendly)
+
+- *Fast:* Written in Clojure and compiled with GraalVM
+
+- *Free:* Opensource
+
+* Why ECA?
+- *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
+- *UX*: LLMs get better, UX not really
+
+- *Multi-model*: with Local LLMs support
+  (company friendly)
 
 - *Fast:* Written in Clojure and compiled with GraalVM
 
 - *Free:* Opensource
 
 - *Transparent:* Prompt, contexts, _metrics_
+
 
 * Main Features
 
@@ -110,6 +179,26 @@
 
 * Metrics
 
+* Metrics
+
+- Improve AI quality output
+
+* Metrics
+
+- Improve AI quality output
+
+  - Improve tokens cost
+    
+* Metrics
+
+- Improve AI quality output
+
+  - Improve tokens cost
+    
+  - Measure failed tools
+
+* Metrics
+
 - Improve AI quality output
 
   - Improve tokens cost
@@ -120,6 +209,7 @@
 
 #+ATTR_ORG: :width 1500
 [[file:images/metrics-config.png]]
+
 
 * Metrics
 
@@ -153,6 +243,15 @@
   
 - Context injection
 
+* Hidden gems - Custom commands
+
+
+          [[file:images/custom-commands-1.png]]
+
+
+          [[file:images/custom-commands-2.png]]
+
+
 
 * Hidden gems - Custom behaviors
 
@@ -164,8 +263,8 @@
 
 
 * Hidden gems - Custom tools
-#+ATTR_ORG: :width 700
-[[file:images/custom-tools-1.png]]   [[file:images/custom-tools-2.png]]
+#+ATTR_ORG: :width 750
+[[file:images/custom-tools-1.png]][[file:images/custom-tools-2.png]]
 
 
 * Demo?
