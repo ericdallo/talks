@@ -7,11 +7,13 @@
 
                                         [[file:images/profile.png]] @ericdallo
 
-* About me
+* Who is this guy?
+
+* Who is this guy?
 
 ** Software engineer at Nubank
 
-* About me
+* Who is this guy?
 
 ** Software engineer at Nubank
 
@@ -20,7 +22,7 @@
 - Linux / NixOS
 - Dev Tooling
 
-* About me
+* Who is this guy?
 
 ** Software engineer at Nubank
 
@@ -38,55 +40,117 @@
 
 * What will we cover?
 
+* What will we cover?
+
 - Why AI for development?
+
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
+  
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
   
 - Why ECA? / Rationale
+
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
+  
+- Why ECA? / Rationale
+
+- The protocol
+
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
+  
+- Why ECA? / Rationale
+
+- The protocol
+
+- Main features
+
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
+  
+- Why ECA? / Rationale
+
+- The protocol
+
+- Main features
+
+- Metrics
+   
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
+  
+- Why ECA? / Rationale
+
+- The protocol
+
+- Main features
+
+- Metrics
+   
+- Hidden gems
+  
+* What will we cover?
+
+- Why AI for development?
+
+- Current state of AI
+  
+- Why ECA? / Rationale
+
+- The protocol
 
 - Main features
 
 - Metrics
 
-- The protocol
-   
-- The protocol
-  
-- The LLM loop
-
 - Hidden gems
 
-* Why AI for development?
+- The LLM loop
 
 * Why AI for development?
 
-- "LLMs are text generators basead on weight"
+* Why AI for development?
+
+- LLMs are "text generators basead on weight"
 
 * Why AI for development?
 
-- "LLMs are text generators basead on weight"
+- LLMs are "text generators basead on weight"
 
 - LLM is a developer tool, not a problem solver
 
 * Why AI for development?
 
-- "LLMs are text generators basead on weight"
-
-- LLM is a developer tool, not a problem solver
-
-- You (should) still need to think
-
-* Why AI for development?
-
-- "LLMs are text generators basead on weight"
+- LLMs are "text generators basead on weight"
 
 - LLM is a developer tool, not a problem solver
 
 - You (should) still need to think
 
-- Works great for pair programming
-
 * Why AI for development?
 
-- "LLMs are text generators basead on weight"
+- LLMs are "text generators basead on weight"
 
 - LLM is a developer tool, not a problem solver
 
@@ -94,52 +158,97 @@
 
 - Works great for pair programming
 
-- It's like a developer, it can be awesome but can mess things up too.
+* Why AI for development?
+
+- LLMs are "text generators basead on weight"
+
+- LLM is a developer tool, not a problem solver
+
+- You (should) still need to think
+
+- Works great for pair programming
+
+- It's like pair with a developer, it can be awesome but can mess things up too.
 
   [[file:images/funny-ai.png]]     [[file:images/ai-thumbs-up.png]]
 
-* Why ECA?
+* Current state of AI
 
-* Why ECA?
+* Current state of AI
+
+- Tomorrow will probably change...
+
+* Current state of AI
+
+- Tomorrow will probably change... but: User _<->_ LLM
+
+* Current state of AI
+
+- Tomorrow will probably change... but: User _<->_ LLM
+
+- AI CLI tools and new editors everywhere
+
+* Current state of AI
+
+- Tomorrow will probably change... but: User _<->_ LLM
+
+- AI CLI tools and new editors everywhere
+
+- You choose your favorite vendor to be *locked* with their models
+
+* Current state of AI
+
+- Tomorrow will probably change... but: User _<->_ LLM
+
+- AI CLI tools and new editors everywhere
+
+- You choose your favorite vendor to be *locked* with their models
+
+- Local / free models are growing - the future?
+
+
+* Why ECA? (Editor Code Assistant)
+
+* Why ECA? (Editor Code Assistant)
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 
-* Why ECA?
+* Why ECA? (Editor Code Assistant)
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
-* Why ECA?
+* Why ECA? (Editor Code Assistant)
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
 - *Multi-model*: with Local LLMs support
-  (company friendly)
+  (your company friendly)
 
-* Why ECA?
+* Why ECA? (Editor Code Assistant)
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
 - *Multi-model*: with Local LLMs support
-  (company friendly)
+  (your company friendly)
 
 - *Fast:* Written in Clojure and compiled with GraalVM
 
-* Why ECA?
+* Why ECA? (Editor Code Assistant)
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
 - *Multi-model*: with Local LLMs support
-  (company friendly)
+  (your company friendly)
 
 - *Fast:* Written in Clojure and compiled with GraalVM
 
 - *Free:* Opensource
 
-* Why ECA?
+* Why ECA? (Editor Code Assistant)
 - *Protocol*: Editors <-> LLMs     [[file:images/rationale.png]]
 - *UX*: LLMs get better, UX not really
 
 - *Multi-model*: with Local LLMs support
-  (company friendly)
+  (your company friendly)
 
 - *Fast:* Written in Clojure and compiled with GraalVM
 
@@ -147,6 +256,12 @@
 
 - *Transparent:* Prompt, contexts, _metrics_
 
+* The Protocol
+
+* The Protocol
+
+#+ATTR_ORG: :width 700
+[[file:images/protocol-points.png]] [[file:images/protocol-1.png]]
 
 * Main Features
 
@@ -212,22 +327,8 @@
 
 
 * Metrics
-
-
-          [[file:images/metrics.png]]
-
-* The Protocol
-
-* The Protocol
-
-#+ATTR_ORG: :width 700
-[[file:images/protocol-points.png]] [[file:images/protocol-1.png]]
-
-* The LLM Loop
-              [[file:images/llm-loop-1.png]]
-
-* The LLM Loop
-              [[file:images/llm-loop-2.png]]
+#+ATTR_ORG: :width 1300
+    [[file:images/metrics.png]]
 
 * Hidden gems
 
@@ -266,8 +367,11 @@
 #+ATTR_ORG: :width 750
 [[file:images/custom-tools-1.png]][[file:images/custom-tools-2.png]]
 
+* The LLM Loop
+              [[file:images/llm-loop-1.png]]
 
-* Demo?
+* The LLM Loop
+              [[file:images/llm-loop-2.png]]
 
 * Thank you!
 
